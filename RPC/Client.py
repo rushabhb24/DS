@@ -1,6 +1,14 @@
-import xmlrpc.client 
-proxy = xmlrpc.client.ServerProxy("http://localhost:8000/") 
-n = int(input("Enter a number to calculate factorial: ")) 
-factorial = proxy.fact(n) 
-print("Response from server..") 
-print("Factorial of number is:", factorial) 
+import xmlrpc.client
+
+# Connect to the server
+proxy = xmlrpc.client.ServerProxy("http://localhost:8000/")
+
+# Take user input
+n = int(input("Enter a number to calculate factorial: "))
+
+# Call the remote factorial function
+factorial = proxy.fact(n)
+
+# Display the result
+print("Response from server...")
+print("Factorial of number is:", factorial)
